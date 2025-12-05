@@ -1,279 +1,167 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>ドローンジャーナリズム — インフォグラフィック</title>
-<meta name="description" content="ドローンジャーナリズムの特徴・用途・課題・具体例をインフォグラフィックでわかりやすく紹介します。" />
-<style>
-  :root{
-    --bg:#f6f7fb;
-    --card:#ffffff;
-    --muted:#6b7280;
-    --accent:#0f62fe;
-    --accent-2:#0b7285;
-    --success:#16a34a;
-    --danger:#ef4444;
-    --maxW:980px;
-    --radius:12px;
-    --gap:18px;
-    font-family:system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",YuGothic, "Hiragino Kaku Gothic ProN", "Noto Sans JP", "Meiryo", sans-serif;
-  }
-  html,body{height:100%}
-  body{
-    margin:0;
-    background:linear-gradient(180deg,var(--bg),#eef2ff);
-    color:#0f172a;
-    -webkit-font-smoothing:antialiased;
-    -moz-osx-font-smoothing:grayscale;
-    padding:28px 16px;
-    display:flex;
-    justify-content:center;
-  }
-  .wrap{max-width:var(--maxW); width:100%;}
-  header{
-    display:flex;
-    align-items:flex-start;
-    gap:16px;
-    margin-bottom:20px;
-  }
-  .logo{
-    width:84px;height:84px;border-radius:14px;background:linear-gradient(135deg,var(--accent),var(--accent-2));
-    display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:20px;box-shadow:0 6px 18px rgba(15,98,254,0.14);
-  }
-  h1{margin:0;font-size:1.4rem}
-  p.lead{margin:6px 0 0;color:var(--muted);font-size:0.98rem}
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ドローンジャーナリズム</title>
 
-  /* layout */
-  .grid{
-    display:grid;
-    grid-template-columns: 1fr 360px;
-    gap:var(--gap);
-    align-items:start;
-  }
+    <style>
+        body {
+            margin: 0;
+            font-family: "Helvetica","Arial",sans-serif;
+            background: #0d0d0d;
+            color: #fff;
+            line-height: 1.8;
+        }
 
-  /* main content card */
-  .card{
-    background:var(--card);
-    border-radius:var(--radius);
-    padding:18px;
-    box-shadow:0 6px 20px rgba(16,24,40,0.06);
-  }
-  .section{margin-bottom:18px}
-  .kicker{display:inline-block;padding:6px 10px;border-radius:999px;background:#f1f5f9;color:var(--muted);font-size:0.8rem;margin-bottom:10px}
-  .infobox{display:flex;gap:12px;align-items:flex-start}
+        header {
+            background: url("https://images.unsplash.com/photo-1521133573892-e44906baee46?auto=format&fit=crop&w=1350&q=80") center/cover no-repeat;
+            height: 65vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 20px;
+        }
 
-  /* infographic horizontal list */
-  .features{
-    display:flex;flex-direction:column;gap:12px;margin-top:8px;
-  }
-  .feat{
-    display:flex;gap:12px;align-items:flex-start;
-  }
-  .icon{
-    width:56px;height:56px;border-radius:10px;background:linear-gradient(180deg,#fff,#f8fafc);display:flex;align-items:center;justify-content:center;border:1px solid rgba(15,23,42,0.04);
-    box-shadow:0 6px 14px rgba(2,6,23,0.04);
-  }
-  .feat h3{margin:0;font-size:1rem}
-  .feat p{margin:6px 0 0;color:var(--muted);font-size:0.95rem;line-height:1.45}
+        header h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            text-shadow: 0 0 20px rgba(0,0,0,0.6);
+            animation: fadeIn 2s ease-out;
+        }
 
-  /* right column */
-  aside.card{position:sticky;top:24px}
-  .stats{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:8px}
-  .stat{background:#fbfdff;padding:10px;border-radius:10px;border:1px solid rgba(2,6,23,0.03);text-align:center}
-  .stat .num{font-weight:700;font-size:1.1rem}
-  .small{font-size:0.82rem;color:var(--muted)}
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 50px auto;
+        }
 
-  /* timeline */
-  .timeline{border-left:3px solid #e6eefc;padding-left:14px;margin-top:8px}
-  .timeline-item{margin-bottom:14px}
-  .timeline-item strong{display:block;margin-bottom:6px}
+        h2 {
+            border-left: 4px solid #1e90ff;
+            padding-left: 10px;
+            margin-top: 60px;
+            font-size: 1.8rem;
+        }
 
-  /* examples */
-  .examples{display:flex;flex-direction:column;gap:8px}
-  .example{background:linear-gradient(180deg,#fff,#fbfdff);padding:12px;border-radius:8px;border:1px solid rgba(2,6,23,0.03)}
+        .card {
+            background: #111;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 20px 0;
+            border: 1px solid #222;
+            box-shadow: 0 0 15px rgba(0,0,0,0.5);
+            animation: fadeUp 0.8s ease-out;
+        }
 
-  /* CTA */
-  .cta{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin-top:12px}
-  .btn{background:var(--accent);color:#fff;padding:10px 12px;border-radius:8px;text-decoration:none;font-weight:600}
-  .btn.secondary{background:#fff;color:var(--accent);border:1px solid rgba(15,98,254,0.12)}
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+        }
 
-  /* responsive */
-  @media (max-width:980px){
-    .grid{grid-template-columns:1fr}
-    aside.card{position:relative;top:0}
-  }
-  @media (max-width:420px){
-    .logo{width:64px;height:64px;font-size:18px}
-    h1{font-size:1.15rem}
-  }
+        .infobox {
+            background: #111;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            border: 1px solid #1e90ff50;
+        }
 
-  /* subtle animation */
-  .reveal{opacity:0;transform:translateY(6px);transition:all .55s cubic-bezier(.2,.9,.3,1)}
-  .reveal.show{opacity:1;transform:none}
-</style>
+        .infobox h3 {
+            margin-bottom: 10px;
+        }
+
+        footer {
+            padding: 30px;
+            text-align: center;
+            margin-top: 50px;
+            background: #111;
+            border-top: 1px solid #222;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to   { opacity: 1; transform: translateY(0); }
+        }
+    </style>
 </head>
+
 <body>
-  <main class="wrap" id="page">
-    <header>
-      <div class="logo" aria-hidden="true">DJ</div>
-      <div>
-        <h1>ドローンジャーナリズム — インフォグラフィック</h1>
-        <p class="lead">空撮・遠隔操作を活用した報道手法。危険地帯やインフラ調査、全景撮影など従来困難だった視点を提供します。</p>
-      </div>
-    </header>
+
+<header>
+    <h1>ドローンジャーナリズムとは？</h1>
+</header>
+
+<div class="container">
+
+    <section class="card">
+        <p>
+            ドローンジャーナリズムとは、ドローン（無人航空機）を活用して
+            <strong>空撮・遠隔操作</strong>などによって行う新しい報道手法です。
+            従来は困難だった危険地帯での取材や、広域を俯瞰する撮影が可能になり、
+            <strong>報道の多様化・効率化</strong>が進んでいます。
+        </p>
+    </section>
+
+    <h2>主な特徴と用途</h2>
 
     <div class="grid">
-      <!-- left: main -->
-      <section class="card">
-        <div class="section reveal">
-          <span class="kicker">概要</span>
-          <div class="infobox">
-            <div style="flex:1">
-              <p>ドローンジャーナリズムとは、ドローン(無人航空機)の空撮機能や遠隔操作能力を活用して行う報道活動のことです。災害現場や紛争地など危険な場所からの映像提供や、インフラ点検を通じた問題発見など、従来の取材で難しかった視点を得るために用いられます。</p>
-            </div>
-          </div>
+        <div class="infobox">
+            <h3>危険な場所からの取材</h3>
+            <p>災害・紛争地帯など、人が近づけない場所からリアルタイム映像を収集。</p>
         </div>
 
-        <div class="section reveal" style="transition-delay:0.08s">
-          <span class="kicker">主な特徴と用途</span>
-          <div class="features">
-            <div class="feat">
-              <div class="icon" aria-hidden="true">
-                <!-- drone svg -->
-                <svg width="34" height="34" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M17 7c.6 0 1-.4 1-1V3l2 2c.6.6.6 1.5 0 2.1l-1 1" stroke="#0f172a" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-              </div>
-              <div>
-                <h3>危険な場所からの取材</h3>
-                <p>大規模災害や紛争地など、記者が立ち入ることが困難な場所から、リアルタイムで状況を伝達できます。</p>
-              </div>
-            </div>
-
-            <div class="feat">
-              <div class="icon">
-                <svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M12 2v6" stroke="#0f172a" stroke-width="1.2" stroke-linecap="round"/></svg>
-              </div>
-              <div>
-                <h3>新たな視点の提供</h3>
-                <p>上空からの俯瞰により、被災地の全景や事件・事故現場の全貌などを捉え、視聴者へ新しい情報を提供します。</p>
-              </div>
-            </div>
-
-            <div class="feat">
-              <div class="icon">
-                <svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M3 12h18" stroke="#0f172a" stroke-width="1.2" stroke-linecap="round"/></svg>
-              </div>
-              <div>
-                <h3>インフラ点検・調査報道</h3>
-                <p>橋梁、送電線、農地などを点検し、隠れた問題を発見。調査報道に活用されます。</p>
-              </div>
-            </div>
-
-            <div class="feat">
-              <div class="icon">
-                <svg width="34" height="34" viewBox="0 0 24 24" fill="none"><path d="M12 6v6" stroke="#0f172a" stroke-width="1.2" stroke-linecap="round"/></svg>
-              </div>
-              <div>
-                <h3>効率化・コスト削減</h3>
-                <p>危険な場所への人員派遣を減らし、迅速な情報収集を可能にします。</p>
-              </div>
-            </div>
-          </div>
+        <div class="infobox">
+            <h3>新たな視点の提供</h3>
+            <p>上空から被害状況や事故現場の全体像を俯瞰して伝える。</p>
         </div>
 
-        <div class="section reveal" style="transition-delay:0.16s">
-          <span class="kicker">現状と課題</span>
-          <div class="timeline">
-            <div class="timeline-item">
-              <strong>法規制の動向</strong>
-              <div class="small">航空法や電波法、プライバシー保護に関する法整備が継続的に議論されています。</div>
-            </div>
-            <div class="timeline-item">
-              <strong>技術の進化</strong>
-              <div class="small">高性能カメラや長時間飛行、AI連携など技術は日々進化しています。</div>
-            </div>
-            <div class="timeline-item">
-              <strong>倫理的側面</strong>
-              <div class="small">プライバシー侵害リスクや報道の公平・中立性の確保が重要です。</div>
-            </div>
-          </div>
+        <div class="infobox">
+            <h3>インフラ点検</h3>
+            <p>橋・送電線・農地を点検し、隠れた問題を報道につなげる。</p>
         </div>
 
-        <div class="section reveal" style="transition-delay:0.24s">
-          <span class="kicker">具体例</span>
-          <div class="examples">
-            <div class="example">
-              <strong>大規模災害</strong>
-              <div class="small">地震や水害の被災地を空撮し、被害の全容把握や救助活動に貢献。</div>
-            </div>
-            <div class="example">
-              <strong>事件・事故報道</strong>
-              <div class="small">事故現場やデモ、大規模イベントを上空から捉え、状況を立体的に伝えます。</div>
-            </div>
-          </div>
+        <div class="infobox">
+            <h3>効率化とコスト削減</h3>
+            <p>危険地域への人員派遣を減らし、迅速な情報収集を実現。</p>
         </div>
-
-        <div class="section reveal" style="transition-delay:0.32s">
-          <span class="kicker">まとめ</span>
-          <p>ドローンジャーナリズムは報道の可能性を広げる一方、適切な運用と法整備が求められる分野として今後も進化します。</p>
-
-          <div class="cta">
-            <a class="btn" href="#more">詳細を読む</a>
-            <a class="btn secondary" href="https://github.com/Gnuky5411/first-code" target="_blank" rel="noopener">リポジトリを見る</a>
-          </div>
-        </div>
-      </section>
-
-      <!-- right: sidebar -->
-      <aside class="card">
-        <div class="section">
-          <span class="kicker">クイックファクト</span>
-          <div class="stats">
-            <div class="stat">
-              <div class="num">危険地帯</div>
-              <div class="small">リアルタイム空撮が可能</div>
-            </div>
-            <div class="stat">
-              <div class="num">コスト</div>
-              <div class="small">従来より削減可</div>
-            </div>
-          </div>
-        </div>
-
-        <div class="section">
-          <span class="kicker">導入時の注意</span>
-          <ul class="small" style="padding-left:16px;margin:8px 0 0">
-            <li>法規制の確認（航空法など）</li>
-            <li>被写体のプライバシー配慮</li>
-            <li>飛行許可・安全確保</li>
-          </ul>
-        </div>
-
-        <div class="section">
-          <span class="kicker">活用例リンク</span>
-          <ul style="margin:8px 0 0;padding-left:16px">
-            <li class="small"><a href="#" onclick="alert('リンクはサンプルです')" aria-label="サンプル">被災地レポートの事例</a></li>
-            <li class="small"><a href="#" onclick="alert('リンクはサンプルです')">技術進化の紹介</a></li>
-          </ul>
-        </div>
-
-        <div class="section">
-          <span class="kicker">埋め込み用（Google Sites）</span>
-          <code style="display:block;padding:8px;background:#fbfdff;border-radius:8px;border:1px solid rgba(2,6,23,0.03);font-size:0.85rem">
-&lt;iframe src="https://Gnuky5411.github.io/first-code/" width="100%" height="600"&gt;&lt;/iframe&gt;
-          </code>
-        </div>
-      </aside>
     </div>
-  </main>
 
-<script>
-  // reveal animation
-  window.addEventListener('load', ()=> {
-    document.querySelectorAll('.reveal').forEach((el,i)=>{
-      setTimeout(()=>el.classList.add('show'), i*120);
-    });
-  });
-</script>
+    <h2>現状と課題</h2>
+
+    <section class="card">
+        <ul>
+            <li><strong>法規制</strong>：航空法・電波法、プライバシー保護の議論が続く。</li>
+            <li><strong>技術の進化</strong>：高性能カメラ、長時間飛行、AI解析など。</li>
+            <li><strong>倫理的側面</strong>：プライバシー、報道の公平性の確保が重要。</li>
+        </ul>
+    </section>
+
+    <h2>具体例</h2>
+
+    <div class="grid">
+        <div class="infobox">
+            <h3>大規模災害</h3>
+            <p>被災地の全景を把握し、救助や状況把握に活用。</p>
+        </div>
+
+        <div class="infobox">
+            <h3>事件・事故</h3>
+            <p>事故現場やイベントの様子を立体的に報道。</p>
+        </div>
+    </div>
+
+</div>
+
+<footer>
+    © 2025 Drone Journalism Info
+</footer>
+
 </body>
 </html>
