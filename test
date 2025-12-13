@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ドローンジャーナリズム｜インフォグラフィック</title>
+  <style>
+    :root {
+      --bg: #f7f7f7;
+      --card: #ffffff;
+      --text: #222;
+      --accent: #2b6cb0;
+      --muted: #666;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Noto Sans JP", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+    }
+
+    header {
+      background: linear-gradient(135deg, #1a365d, #2b6cb0);
+      color: #fff;
+      padding: 3rem 1.5rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      font-size: 1rem;
+      opacity: 0.9;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    section {
+      margin-bottom: 3rem;
+    }
+
+    section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+      border-left: 6px solid var(--accent);
+      padding-left: 0.75rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.2rem;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 14px;
+      padding: 1.2rem 1.3rem;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    }
+
+    .card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.4rem;
+      color: var(--accent);
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    .timeline {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .timeline-item {
+      background: #edf2f7;
+      border-radius: 12px;
+      padding: 1rem;
+    }
+
+    .timeline-item span {
+      display: block;
+      font-weight: bold;
+      color: #1a365d;
+      margin-bottom: 0.3rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background: var(--card);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+    }
+
+    th, td {
+      padding: 0.9rem;
+      text-align: left;
+      font-size: 0.9rem;
+    }
+
+    th {
+      background: #e2e8f0;
+    }
+
+    tr:nth-child(even) td {
+      background: #f9fafb;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.8rem;
+      color: #555;
+      margin-top: 4rem;
+    }
+
+    footer span {
+      display: block;
+      margin-top: 0.3rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>ドローンジャーナリズム</h1>
+    <p>法律・実用事例・競技利用を機種別に比較するインフォグラフィック</p>
+  </header>
+
+  <main>
+    <section>
+      <h2>① 日本における法規制（要点）</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>航空法</h3>
+          <p>人口集中地区（DID）、高度150m以上、空港周辺での飛行は原則禁止。報道目的でも国土交通省の許可・承認が必要。</p>
+        </div>
+        <div class="card">
+          <h3>小型無人機等飛行禁止法</h3>
+          <p>国会議事堂、首相官邸、原発、空港などの重要施設周辺は原則飛行禁止。</p>
+        </div>
+        <div class="card">
+          <h3>登録・電波・権利</h3>
+          <p>100g以上の機体は登録義務あり。電波法、肖像権・プライバシーへの配慮も不可欠。</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>② 実用的なドローンジャーナリズム事例</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <span>災害報道</span>
+          能登半島地震などで被災地全体を俯瞰撮影。立ち入り困難区域の状況把握に貢献。
+        </div>
+        <div class="timeline-item">
+          <span>事故・インフラ調査</span>
+          道路陥没や橋梁点検でドローンを投入し、人が入れない空間を可視化。
+        </div>
+        <div class="timeline-item">
+          <span>調査・環境報道</span>
+          不法投棄、森林伐採、開発状況を上空から記録し、客観的証拠として活用。
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>③ 競技・娯楽としてのドローン</h2>
+      <div class="cards">
+        <div class="card">
+          <h3>FPVドローンレース</h3>
+          <p>ゴーグル越しの一人称視点で高速飛行。操縦技術と反射神経が重視される競技。</p>
+        </div>
+        <div class="card">
+          <h3>ドローンファイト</h3>
+          <p>トイドローン同士で風船を割り合う日本発のスポーツ。安全性と手軽さが特徴。</p>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <h2>④ 用途別ドローン機種の比較</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>用途</th>
+            <th>代表的機種</th>
+            <th>特徴</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>報道・映像撮影</td>
+            <td>DJI Mavic / Phantom</td>
+            <td>高画質カメラ、安定した自動飛行、長時間撮影</td>
+          </tr>
+          <tr>
+            <td>災害・調査</td>
+            <td>DJI Matrice / Mavic 3T</td>
+            <td>赤外線対応、耐環境性、業務用途向け</td>
+          </tr>
+          <tr>
+            <td>レース</td>
+            <td>FPV自作機（5インチ）</td>
+            <td>超高速・高機動、映像安定性より操作応答性重視</td>
+          </tr>
+          <tr>
+            <td>娯楽・競技</td>
+            <td>DJI Avata / トイドローン</td>
+            <td>安全設計、小型軽量、初心者向け</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <footer>
+      大学レポート用インフォグラフィックWebページ
+      <span>※ 法制度・事例は国土交通省および報道事例に基づく一般的整理</span>
+    </footer>
+  </main>
+
+  <script>
+    // 今回は静的インフォグラフィックのためJSは最小限
+    console.log("Drone Journalism Infographic Loaded");
+  </script>
+</body>
+</html>
